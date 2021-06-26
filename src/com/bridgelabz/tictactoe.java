@@ -39,9 +39,38 @@ private static void ChooseLetter() {
 	sc.close();
 }
 
+
+private static void ShowBoard(char[] boardArray) {
+	System.out.println("-----THE BOARD-----");
+	System.out.println("___________________");
+	System.out.print("|  ");
+	for (char i = 1; i < 3; i++) {
+		System.out.print(boardArray[i] + "  |  ");
+	}
+	System.out.print(boardArray[3] + "  ");
+	System.out.print("|");
+	System.out.println();
+	System.out.println("___________________");
+	System.out.print("|  ");
+	for (char i = 4; i < 6; i++) {
+		System.out.print(boardArray[i] + "  |  ");
+	}
+	System.out.print(boardArray[6] + "  ");
+	System.out.print("|");
+	System.out.println();
+	System.out.println("___________________");
+	System.out.print("|  ");
+	for (char i = 7; i < 9; i++) {
+		System.out.print(boardArray[i] + "  |  ");
+	}
+	System.out.print(boardArray[9] + "  ");
+	System.out.println("|");
+	System.out.print("___________________");
+}
 public static void main(String[] args) {		
 	char[] boardArray = Board();
 	ChooseLetter();
+	ShowBoard(boardArray);
 }
 }
 
