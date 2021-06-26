@@ -24,6 +24,8 @@ public class tictactoe {
 			return false;
 		}
 	}
+	
+	
 	/* Returns a random string between "heads" & "tails" */
 	@SuppressWarnings("unused")
 	private static String TossMaker() {
@@ -32,6 +34,56 @@ public class tictactoe {
 		return randomString;
 	}
 
+	private static void winningCondition() {
+
+		// -----------------Horizontal conditions-----------------
+		int i = 1;
+		if (boardArray[i] == boardArray[i + 1] && boardArray[i + 1] == boardArray[i + 2]) {
+			System.out.println("A player won");
+			System.exit(0);
+		}
+		i = 4;
+		if (boardArray[i] == boardArray[i + 1] && boardArray[i + 1] == boardArray[i + 2]) {
+			System.out.println("A player won");
+			System.exit(0);
+		}
+		i = 7;
+		if (boardArray[i] == boardArray[i + 1] && boardArray[i + 1] == boardArray[i + 2]) {
+			System.out.println("A player won");
+			System.exit(0);
+		}
+		i = 1;
+		if (boardArray[i] == boardArray[i + 3] && boardArray[i + 6] == boardArray[i + 3]) {
+			System.out.println("A player won");
+			System.exit(0);
+		}
+		i = 2;
+		if (boardArray[i] == boardArray[i + 3] && boardArray[i + 6] == boardArray[i + 3]) {
+			System.out.println("A player won");
+			System.exit(0);
+		}
+		i = 3;
+		if (boardArray[i] == boardArray[i + 3] && boardArray[i + 6] == boardArray[i + 3]) {
+			System.out.println("A player won");
+			System.exit(0);
+		}
+		
+		i = 1;
+		if (boardArray[i] == boardArray[i + 4] && boardArray[i + 4] == boardArray[i + 8]) {
+			System.out.println("A player won");
+			System.exit(0);
+		}
+		i = 3;
+		if (boardArray[i] == boardArray[i + 2] && boardArray[i + 4] == boardArray[i + 2]) {
+			System.out.println("A player won");
+			System.exit(0);
+		} else {
+			System.out.println("The match is drawn");
+			System.exit(0);
+		}
+	}
+	
+	
 	
 		// Allows the user to 'X' or 'O'
 	
