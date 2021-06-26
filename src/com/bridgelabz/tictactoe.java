@@ -1,12 +1,14 @@
 package com.bridgelabz;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class tictactoe {
+
 	private static char[] boardArray;
 	private static int[] boardArrayIndex = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-	// Returns the board in the form of a 1D array
+	private static String[] tossString = { "heads", "tails" };
+	
 	private static char[] Board() {
 		char[] dummyBoardArray = new char[10];
 		for (int i = 0; i < dummyBoardArray.length; i++) {
@@ -22,16 +24,25 @@ public class tictactoe {
 			return false;
 		}
 	}
+	/* Returns a random string between "heads" & "tails" */
+	@SuppressWarnings("unused")
+	private static String TossMaker() {
+		int index = new Random().nextInt(tossString.length);
+		String randomString = (tossString[index]);
+		return randomString;
+	}
+
+	
 		// Allows the user to 'X' or 'O'
 	
- 
+@SuppressWarnings("unused")
 private static void ChooseLetter() {
 	
-	@SuppressWarnings("unused")
-	char firstCharacterInput = ' ';
+	char firstplayerCharacterInput = ' ';
 	char computerCharacterInput = ' ';
 	try (Scanner sc = new Scanner(System.in)) {
 		int positionOfMove;
+		if (TossMaker().equals("heads")) {
 		System.out.println("Time to give input Mr. Player : ");
 		while (true) {
 			System.out.println("Enter the position you want to give input in (from 1-9) : ");
@@ -79,9 +90,18 @@ private static void ChooseLetter() {
 					+ computerCharacterInput);
 			break;
 		}
+		} else {
+			System.out.println("Computer plays first & has choosen X");
+			System.exit(0);
+		}
+		sc.close();
 	}
 }
-
+public static void main(String[] args) {		
+	char[] boardArray = Board();
+	ChooseLetter();
+	ShowBoard(boardArray);
+}
 
 
 private static void ShowBoard(char[] boardArray) {
@@ -111,10 +131,6 @@ private static void ShowBoard(char[] boardArray) {
 	System.out.println("|");
 	System.out.print(" "); 
 }
-public static void main(String[] args) {		
-	char[] boardArray = Board();
-	ChooseLetter();
-	ShowBoard(boardArray);
-}
+
 }
 
