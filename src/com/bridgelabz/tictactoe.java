@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import java.util.Scanner;
+
 public class tictactoe {
 private static char[] Board() {
 		char[] boardArray = new char[11];
@@ -9,8 +11,37 @@ private static char[] Board() {
 		return boardArray;
 	}
 	
-	public static void main(String[] args) {
-		Board();
+private static void ChooseLetter() {
+	
+	char firstCharacterInput = ' ';
+	char computerCharacterInput = ' ';
+	Scanner sc = new Scanner(System.in);
+	
+	System.out.println("Enter input Mr. player");
+	System.out.println("Enter 'X' or 'O' : ");
+	firstCharacterInput = sc.next().charAt(0);
+	
+	switch (firstCharacterInput) {
+	case 'X': {
+		firstCharacterInput = 'X';
+		computerCharacterInput = 'O';
+		break;
 	}
+	case 'O': {
+		firstCharacterInput = 'O';
+		computerCharacterInput = 'X';
+		break;
+	}
+	default:
+	}
+	
+	System.out.println("User input is : " + firstCharacterInput + " and computer input is : " + computerCharacterInput);
+	sc.close();
+}
+
+public static void main(String[] args) {		
+	char[] boardArray = Board();
+	ChooseLetter();
+}
 }
 
